@@ -4,7 +4,12 @@ const CURRENT_CACHES = {
   'read-through': 'read-through-cache-v' + CACHE_VERSION
 };
 
+self.addEventListener('install', function (e) {
+    console.log('[SERVICE WORKER] Install');
+});
+
 self.addEventListener('activate', (event) => {
+  console.log('[SERVICE WORKER] Activate');
   // Delete all caches that aren't named in CURRENT_CACHES.
   // While there is only one cache in this example, the same logic will handle the case where
   // there are multiple versioned caches.
@@ -35,6 +40,7 @@ self.addEventListener('activate', (event) => {
 // Other approaches, like selectively caching based on response headers or only caching
 // responses served from a specific domain, might be more appropriate for those use cases.
 self.addEventListener('fetch', (event) => {
+  console.log('[SERVICE WORKER] Fetch');
 
   event.respondWith(
     caches.open(CURRENT_CACHES['read-through']).then((cache) => {

@@ -18,4 +18,4 @@ import { HomePage } from '../pages/home/home';
   ],
   providers: []
 })
-export class AppModule {}
+export class AppModule { }

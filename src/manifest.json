@@ -1,6 +1,6 @@
 {
-  "name": "Ionic",
-  "short_name": "Ionic",
+  "name": "Ionic PWA",
+  "short_name": "Ionic PWA",
   "start_url": "index.html",
   "display": "standalone",
   "icons": [{
